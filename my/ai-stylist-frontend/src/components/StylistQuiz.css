@@ -1,149 +1,183 @@
 .quiz-container {
-    padding: 40px;
-    max-width: 700px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
+  padding: 40px;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.progress-container {
+  margin: 25px 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 25px;
+  background: #FFF0FA;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, #FFB6D9 0%, #D5AAFF 50%, #B4E7FF 100%);
+  transition: width 0.5s ease;
+  position: relative;
+}
+
+.progress::after {
+  content: '✨';
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.progress-text {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 9px;
+}
+
+.question-card {
+  margin-top: 30px;
+}
+
+.question-title {
+  font-size: 13px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.option-btn {
+  padding: 15px 10px;
+  font-size: 9px;
+  text-align: center;
+}
+
+.voice-input {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.pixel-textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.8;
+}
+
+.voice-btn {
+  align-self: flex-start;
+}
+
+.voice-btn.recording {
+  background: linear-gradient(180deg, #FF6B9D 0%, #FF4757 100%);
+  border-color: #FF3838;
+  animation: recordPulse 1s infinite;
+}
+
+@keyframes recordPulse {
+  0%, 100% { 
+    transform: scale(1);
+    box-shadow: 4px 4px 0px #D5AAFF;
   }
-  
-  .progress-container {
-    margin: 25px 0;
+  50% { 
+    transform: scale(1.05);
+    box-shadow: 6px 6px 0px #D5AAFF;
   }
-  
-  .progress-bar {
-    width: 100%;
-    height: 25px;
-    background: #FFF0FA;
-    position: relative;
-    overflow: hidden;
+}
+
+.transcript {
+  font-size: 9px;
+  padding: 10px;
+  background: rgba(213, 170, 255, 0.2);
+  border: 2px dashed #D5AAFF;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.nav-btn {
+  flex: 1;
+  padding: 15px;
+}
+
+.outfit-result {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.result-card {
+  padding: 30px;
+}
+
+.outfit-description {
+  margin: 25px 0;
+}
+
+.outfit-description h3 {
+  font-size: 12px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.outfit-description p {
+  font-size: 10px;
+  line-height: 2;
+}
+
+/* Fix for generated image overflow */
+.generated-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border: 3px solid #FFB6D9;
+  box-shadow: 6px 6px 0px #D5AAFF;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .quiz-container {
+    padding: 20px;
   }
-  
-  .progress {
-    height: 100%;
-    background: linear-gradient(90deg, #FFB6D9 0%, #D5AAFF 50%, #B4E7FF 100%);
-    transition: width 0.5s ease;
-    position: relative;
-  }
-  
-  .progress::after {
-    content: '✨';
-    position: absolute;
-    right: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  .progress-text {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 9px;
-  }
-  
-  .question-card {
-    margin-top: 30px;
-  }
-  
-  .question-title {
-    font-size: 13px;
-    margin-bottom: 25px;
-    text-align: center;
-  }
-  
+
   .options-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-    margin: 25px 0;
+    grid-template-columns: 1fr;
   }
-  
-  .option-btn {
-    padding: 15px 10px;
-    font-size: 9px;
-    text-align: center;
+
+  .generated-image {
+    max-height: 60vh;
+    border: 2px solid #FFB6D9;
+    box-shadow: 4px 4px 0px #D5AAFF;
   }
-  
-  .voice-input {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .pixel-textarea {
-    resize: vertical;
-    min-height: 100px;
-    line-height: 1.8;
-  }
-  
-  .voice-btn {
-    align-self: flex-start;
-  }
-  
-  .voice-btn.recording {
-    background: linear-gradient(180deg, #FF6B9D 0%, #FF4757 100%);
-    border-color: #FF3838;
-    animation: recordPulse 1s infinite;
-  }
-  
-  @keyframes recordPulse {
-    0%, 100% { 
-      transform: scale(1);
-      box-shadow: 4px 4px 0px #D5AAFF;
-    }
-    50% { 
-      transform: scale(1.05);
-      box-shadow: 6px 6px 0px #D5AAFF;
-    }
-  }
-  
-  .transcript {
-    font-size: 9px;
-    padding: 10px;
-    background: rgba(213, 170, 255, 0.2);
-    border: 2px dashed #D5AAFF;
-  }
-  
-  .nav-buttons {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    margin-top: 30px;
-  }
-  
-  .nav-btn {
-    flex: 1;
-    padding: 15px;
-  }
-  
-  .outfit-result {
-    animation: fadeIn 0.5s ease;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  
+
   .result-card {
-    padding: 30px;
+    padding: 20px;
   }
-  
-  .outfit-description {
-    margin: 25px 0;
+
+  .nav-buttons {
+    flex-direction: column;
   }
-  
-  .outfit-description h3 {
-    font-size: 12px;
-    margin-bottom: 15px;
-    text-align: center;
+
+  .nav-btn {
+    width: 100%;
   }
-  
-  .outfit-description p {
-    font-size: 10px;
-    line-height: 2;
-  }
-  
-  @media (max-width: 768px) {
-    .options-grid {
-      grid-template-columns: 1fr;
-    }
-  }
+}
