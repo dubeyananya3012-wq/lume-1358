@@ -1,0 +1,118 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .login-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  
+  .clouds {
+    position: absolute;
+    font-size: 60px;
+    opacity: 0.3;
+    animation: float 20s infinite;
+    top: 20%;
+    left: 10%;
+  }
+  
+  .cloud2 {
+    animation-delay: 5s;
+    top: 60%;
+    left: 70%;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-30px); }
+  }
+  
+  .login-box {
+    width: 450px;
+    padding: 40px;
+    position: relative;
+    z-index: 2;
+    animation: slideIn 0.5s ease-out;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .login-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .login-header h2 {
+    font-size: 14px;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .pixel-label {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    color: #4A4A4A;
+  }
+  
+  .submit-btn {
+    margin-top: 10px;
+    background: linear-gradient(180deg, #D5AAFF 0%, #B894FF 100%);
+    border-color: #9D7FEA;
+    font-size: 12px;
+    padding: 15px;
+  }
+  
+  .toggle-link {
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 9px;
+    color: #9D7FEA;
+    transition: color 0.3s;
+  }
+  
+  .toggle-link:hover {
+    color: #FFB6D9;
+  }
+  
+  .error {
+    color: #FF6B9D;
+    text-align: center;
+    font-size: 9px;
+    padding: 10px;
+    background: rgba(255, 107, 157, 0.1);
+    border: 2px dashed #FF6B9D;
+  }
+  
+  @media (max-width: 768px) {
+    .login-box {
+      width: 90%;
+      padding: 25px;
+    }
+  }

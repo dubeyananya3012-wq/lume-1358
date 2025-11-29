@@ -1,0 +1,50 @@
+.moodboard-container {
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .moodboard-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .style-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+  }
+  
+  .style-btn {
+    padding: 12px 8px;
+    font-size: 9px;
+    text-align: center;
+  }
+  
+  .moodboard-result {
+    animation: fadeIn 0.5s ease;
+  }
+  
+  .moodboard-description {
+    margin: 25px 0;
+  }
+  
+  .moodboard-description h3 {
+    font-size: 12px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .moodboard-description p {
+    font-size: 10px;
+    line-height: 2;
+  }

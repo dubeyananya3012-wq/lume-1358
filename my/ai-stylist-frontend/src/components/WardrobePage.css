@@ -1,0 +1,183 @@
+.wardrobe-container {
+    padding: 30px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .upload-section {
+    margin: 25px 0;
+  }
+  
+  .category-selector {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+  .category-btn {
+    font-size: 9px;
+    padding: 10px 15px;
+  }
+  
+  .pixel-btn-small {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 8px;
+    padding: 8px 12px;
+    background: linear-gradient(180deg, #FFD6EC 0%, #FFB6D9 100%);
+    border: 2px solid #FF8DC7;
+    color: #4A4A4A;
+    cursor: pointer;
+    transition: all 0.1s;
+    box-shadow: 2px 2px 0px #D5AAFF;
+  }
+  
+  .pixel-btn-small:hover {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0px #D5AAFF;
+  }
+  
+  .pixel-btn-small.active {
+    background: linear-gradient(180deg, #D5AAFF 0%, #B894FF 100%);
+    border-color: #9D7FEA;
+  }
+  
+  .upload-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .upload-label {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .uploading-indicator {
+    font-size: 10px;
+    animation: pulse 1s infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  
+  .clothes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+  }
+  
+  .clothes-item {
+    padding: 15px;
+    transition: transform 0.2s;
+  }
+  
+  .clothes-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .item-image-container {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border: 3px solid #FFB6D9;
+    background: #FFF0FA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  
+  .item-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: pixelated;
+  }
+  
+  .item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .item-info p {
+    font-size: 9px;
+    text-align: center;
+  }
+  
+  .delete-btn {
+    background: linear-gradient(180deg, #FFB6D9 0%, #FF8DC7 100%);
+    border-color: #FF6B9D;
+  }
+  
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 11px;
+  }
+  
+  .empty-state p {
+    margin: 15px 0;
+  }
+  
+  @media (max-width: 768px) {
+    .clothes-grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    
+    .category-selector {
+      justify-content: center;
+    }
+  }
+
+  /* Add to existing WardrobePage.css */
+
+.stats-section {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.stats-section p {
+  margin-bottom: 15px;
+  font-size: 11px;
+}
+
+.category-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.stat-badge {
+  padding: 8px 12px;
+  background: linear-gradient(180deg, #D5AAFF 0%, #B894FF 100%);
+  border: 2px solid #9D7FEA;
+  font-size: 8px;
+  border-radius: 0;
+}
+
+.file-name {
+  font-size: 7px;
+  color: #9D7FEA;
+  word-break: break-all;
+  margin-top: 5px;
+}
+
+.hint {
+  font-size: 9px;
+  color: #9D7FEA;
+  margin-top: 10px;
+}
+
+.item-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Remove pixelated rendering for better quality with base64 */
+}
