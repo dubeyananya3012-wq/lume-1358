@@ -17,7 +17,7 @@ function WardrobePage({ userId }) {
   const fetchClothes = async () => {
     try {
       console.log('🔍 Fetching clothes for user:', userId);
-      const response = await axios.get(`http://localhost:5000/api/wardrobe/${userId}`);
+      const response = await axios.get(`https://lume-1358.onrender.com/api/wardrobe/${userId}`);
       console.log('✅ Fetched clothes:', response.data);
       setClothes(response.data);
     } catch (error) {
@@ -28,7 +28,7 @@ function WardrobePage({ userId }) {
 
   const fetchStats = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/wardrobe/stats/${userId}`);
+      const response = await axios.get(`https://lume-1358.onrender.com/api/wardrobe/stats/${userId}`);
       setStats(response.data);
     } catch (error) {
       console.error('❌ Error fetching stats:', error);
@@ -66,7 +66,7 @@ function WardrobePage({ userId }) {
 
       try {
         const response = await axios.post(
-          'http://localhost:5000/api/wardrobe/upload', 
+          'https://lume-1358.onrender.com/api/wardrobe/upload', 
           formData,
           {
             headers: { 
@@ -90,7 +90,7 @@ function WardrobePage({ userId }) {
         } else if (error.request) {
           // Request made but no response
           console.error('No response from server');
-          setUploadError('Cannot connect to server. Is backend running on port 5000?');
+          setUploadError('Cannot connect to server. Is backend running at https://lume-1358.onrender.com?');
         } else {
           // Error setting up request
           console.error('Request setup error:', error.message);
@@ -125,7 +125,7 @@ function WardrobePage({ userId }) {
 
     try {
       console.log(`🗑️ Deleting item: ${id}`);
-      await axios.delete(`http://localhost:5000/api/wardrobe/${id}`);
+      await axios.delete(`https://lume-1358.onrender.com/api/wardrobe/${id}`);
       console.log(`✅ Deleted item ${id}`);
       fetchClothes();
       fetchStats();
@@ -152,7 +152,7 @@ function WardrobePage({ userId }) {
       <div className="debug-info pixel-border-inner" style={{ marginBottom: '20px', fontSize: '8px' }}>
         <p className="pixel-text">🔍 User ID: {userId}</p>
         <p className="pixel-text">📊 Items: {clothes.length}</p>
-        <p className="pixel-text">🔗 Backend: http://localhost:5000</p>
+        <p className="pixel-text">🔗 Backend: https://lume-1358.onrender.com</p>
       </div>
 
       {/* Error Display */}

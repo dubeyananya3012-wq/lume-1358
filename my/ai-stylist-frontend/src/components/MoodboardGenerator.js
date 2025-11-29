@@ -12,7 +12,7 @@ function MoodboardGenerator({ userId }) {
   const handleGenerate = async () => {
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:5000/api/stylist/generate-moodboard', {
+      const response = await axios.post('https://lume-1358.onrender.com/api/stylist/generate-moodboard', {
         userId,
         theme,
         colors,
@@ -92,7 +92,7 @@ function MoodboardGenerator({ userId }) {
                 className="generated-moodboard"
                 style={{ width: "100%", borderRadius: "8px" }}
                 />
-              )}
+               )}
 
             </div>
             <button 
